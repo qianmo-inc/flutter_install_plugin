@@ -10,7 +10,6 @@ void main() {
 
   channel.setMockMethodCallHandler((MethodCall methodCall) async {
     log.add(methodCall);
-    return response;
   });
 
   tearDown(() {
@@ -31,7 +30,6 @@ void main() {
   });
 
   test('gotoAppStore test', () async {
-    response = null;
     final fakeUrl = 'fake_url';
     final String result = await InstallPlugin.gotoAppStore(fakeUrl);
     expect(
